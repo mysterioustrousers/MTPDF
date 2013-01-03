@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2DBB9F8169648570068E073 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F7169648570068E073 /* Foundation.framework */; };
+		C2DBB9FD169648570068E073 /* MTPDF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C2DBB9FC169648570068E073 /* MTPDF.h */; };
+		C2DBB9FF169648570068E073 /* MTPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DBB9FE169648570068E073 /* MTPDF.m */; };
+		C2DBBA07169648570068E073 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBBA06169648570068E073 /* SenTestingKit.framework */; };
+		C2DBBA09169648570068E073 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBBA08169648570068E073 /* UIKit.framework */; };
+		C2DBBA0A169648570068E073 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F7169648570068E073 /* Foundation.framework */; };
+		C2DBBA0D169648570068E073 /* libMTPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F4169648570068E073 /* libMTPDF.a */; };
+		C2DBBA13169648570068E073 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2DBBA11169648570068E073 /* InfoPlist.strings */; };
+		C2DBBA16169648570068E073 /* MTPDFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DBBA15169648570068E073 /* MTPDFTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2DBBA0B169648570068E073 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2DBB9EB169648570068E073 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2DBB9F3169648570068E073;
+			remoteInfo = MTPDF;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2DBB9F2169648570068E073 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				C2DBB9FD169648570068E073 /* MTPDF.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C2DBB9F4169648570068E073 /* libMTPDF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMTPDF.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DBB9F7169648570068E073 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C2DBB9FB169648570068E073 /* MTPDF-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTPDF-Prefix.pch"; sourceTree = "<group>"; };
+		C2DBB9FC169648570068E073 /* MTPDF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPDF.h; sourceTree = "<group>"; };
+		C2DBB9FE169648570068E073 /* MTPDF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPDF.m; sourceTree = "<group>"; };
+		C2DBBA05169648570068E073 /* MTPDFTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTPDFTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DBBA06169648570068E073 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C2DBBA08169648570068E073 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C2DBBA10169648570068E073 /* MTPDFTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MTPDFTests-Info.plist"; sourceTree = "<group>"; };
+		C2DBBA12169648570068E073 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C2DBBA14169648570068E073 /* MTPDFTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPDFTests.h; sourceTree = "<group>"; };
+		C2DBBA15169648570068E073 /* MTPDFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPDFTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2DBB9F1169648570068E073 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DBB9F8169648570068E073 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2DBBA01169648570068E073 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DBBA07169648570068E073 /* SenTestingKit.framework in Frameworks */,
+				C2DBBA09169648570068E073 /* UIKit.framework in Frameworks */,
+				C2DBBA0A169648570068E073 /* Foundation.framework in Frameworks */,
+				C2DBBA0D169648570068E073 /* libMTPDF.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2DBB9E9169648570068E073 = {
+			isa = PBXGroup;
+			children = (
+				C2DBB9F9169648570068E073 /* MTPDF */,
+				C2DBBA0E169648570068E073 /* MTPDFTests */,
+				C2DBB9F6169648570068E073 /* Frameworks */,
+				C2DBB9F5169648570068E073 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2DBB9F5169648570068E073 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2DBB9F4169648570068E073 /* libMTPDF.a */,
+				C2DBBA05169648570068E073 /* MTPDFTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2DBB9F6169648570068E073 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2DBB9F7169648570068E073 /* Foundation.framework */,
+				C2DBBA06169648570068E073 /* SenTestingKit.framework */,
+				C2DBBA08169648570068E073 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2DBB9F9169648570068E073 /* MTPDF */ = {
+			isa = PBXGroup;
+			children = (
+				C2DBB9FC169648570068E073 /* MTPDF.h */,
+				C2DBB9FE169648570068E073 /* MTPDF.m */,
+				C2DBB9FA169648570068E073 /* Supporting Files */,
+			);
+			path = MTPDF;
+			sourceTree = "<group>";
+		};
+		C2DBB9FA169648570068E073 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2DBB9FB169648570068E073 /* MTPDF-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C2DBBA0E169648570068E073 /* MTPDFTests */ = {
+			isa = PBXGroup;
+			children = (
+				C2DBBA14169648570068E073 /* MTPDFTests.h */,
+				C2DBBA15169648570068E073 /* MTPDFTests.m */,
+				C2DBBA0F169648570068E073 /* Supporting Files */,
+			);
+			path = MTPDFTests;
+			sourceTree = "<group>";
+		};
+		C2DBBA0F169648570068E073 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2DBBA10169648570068E073 /* MTPDFTests-Info.plist */,
+				C2DBBA11169648570068E073 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2DBB9F3169648570068E073 /* MTPDF */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2DBBA19169648570068E073 /* Build configuration list for PBXNativeTarget "MTPDF" */;
+			buildPhases = (
+				C2DBB9F0169648570068E073 /* Sources */,
+				C2DBB9F1169648570068E073 /* Frameworks */,
+				C2DBB9F2169648570068E073 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MTPDF;
+			productName = MTPDF;
+			productReference = C2DBB9F4169648570068E073 /* libMTPDF.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C2DBBA04169648570068E073 /* MTPDFTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2DBBA1C169648570068E073 /* Build configuration list for PBXNativeTarget "MTPDFTests" */;
+			buildPhases = (
+				C2DBBA00169648570068E073 /* Sources */,
+				C2DBBA01169648570068E073 /* Frameworks */,
+				C2DBBA02169648570068E073 /* Resources */,
+				C2DBBA03169648570068E073 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2DBBA0C169648570068E073 /* PBXTargetDependency */,
+			);
+			name = MTPDFTests;
+			productName = MTPDFTests;
+			productReference = C2DBBA05169648570068E073 /* MTPDFTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2DBB9EB169648570068E073 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Mysterious Trousers";
+			};
+			buildConfigurationList = C2DBB9EE169648570068E073 /* Build configuration list for PBXProject "MTPDF" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C2DBB9E9169648570068E073;
+			productRefGroup = C2DBB9F5169648570068E073 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2DBB9F3169648570068E073 /* MTPDF */,
+				C2DBBA04169648570068E073 /* MTPDFTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2DBBA02169648570068E073 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DBBA13169648570068E073 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2DBBA03169648570068E073 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2DBB9F0169648570068E073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DBB9FF169648570068E073 /* MTPDF.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2DBBA00169648570068E073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DBBA16169648570068E073 /* MTPDFTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2DBBA0C169648570068E073 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2DBB9F3169648570068E073 /* MTPDF */;
+			targetProxy = C2DBBA0B169648570068E073 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C2DBBA11169648570068E073 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2DBBA12169648570068E073 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2DBBA17169648570068E073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C2DBBA18169648570068E073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2DBBA1A169648570068E073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MTPDF.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTPDF/MTPDF-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C2DBBA1B169648570068E073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MTPDF.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTPDF/MTPDF-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C2DBBA1D169648570068E073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTPDF/MTPDF-Prefix.pch";
+				INFOPLIST_FILE = "MTPDFTests/MTPDFTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C2DBBA1E169648570068E073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTPDF/MTPDF-Prefix.pch";
+				INFOPLIST_FILE = "MTPDFTests/MTPDFTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2DBB9EE169648570068E073 /* Build configuration list for PBXProject "MTPDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2DBBA17169648570068E073 /* Debug */,
+				C2DBBA18169648570068E073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2DBBA19169648570068E073 /* Build configuration list for PBXNativeTarget "MTPDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2DBBA1A169648570068E073 /* Debug */,
+				C2DBBA1B169648570068E073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C2DBBA1C169648570068E073 /* Build configuration list for PBXNativeTarget "MTPDFTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2DBBA1D169648570068E073 /* Debug */,
+				C2DBBA1E169648570068E073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2DBB9EB169648570068E073 /* Project object */;
+}
