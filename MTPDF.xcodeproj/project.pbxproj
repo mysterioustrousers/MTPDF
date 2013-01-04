@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2BD7D951696762100104583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BD7D941696762100104583 /* UIKit.framework */; };
+		C2BD7D971696762B00104583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BD7D941696762100104583 /* UIKit.framework */; };
 		C2DBB9F8169648570068E073 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F7169648570068E073 /* Foundation.framework */; };
 		C2DBB9FD169648570068E073 /* MTPDF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C2DBB9FC169648570068E073 /* MTPDF.h */; };
 		C2DBB9FF169648570068E073 /* MTPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DBB9FE169648570068E073 /* MTPDF.m */; };
 		C2DBBA07169648570068E073 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBBA06169648570068E073 /* SenTestingKit.framework */; };
-		C2DBBA09169648570068E073 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBBA08169648570068E073 /* UIKit.framework */; };
 		C2DBBA0A169648570068E073 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F7169648570068E073 /* Foundation.framework */; };
 		C2DBBA0D169648570068E073 /* libMTPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F4169648570068E073 /* libMTPDF.a */; };
 		C2DBBA13169648570068E073 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2DBBA11169648570068E073 /* InfoPlist.strings */; };
-		C2DBBA16169648570068E073 /* MTPDFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DBBA15169648570068E073 /* MTPDFTests.m */; };
+		C2DBBA201696487C0068E073 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBBA1F1696487C0068E073 /* CoreGraphics.framework */; };
+		C2DBBA22169648C50068E073 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C2DBBA21169648C50068E073 /* sample.pdf */; };
+		C2DBBA2916964AF70068E073 /* MTPDFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DBBA15169648570068E073 /* MTPDFTests.m */; };
+		C2DBBA2A16964B610068E073 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBBA1F1696487C0068E073 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C2BD7D941696762100104583 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2DBB9F4169648570068E073 /* libMTPDF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMTPDF.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DBB9F7169648570068E073 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C2DBB9FB169648570068E073 /* MTPDF-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTPDF-Prefix.pch"; sourceTree = "<group>"; };
@@ -54,6 +59,8 @@
 		C2DBBA12169648570068E073 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C2DBBA14169648570068E073 /* MTPDFTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTPDFTests.h; sourceTree = "<group>"; };
 		C2DBBA15169648570068E073 /* MTPDFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPDFTests.m; sourceTree = "<group>"; };
+		C2DBBA1F1696487C0068E073 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C2DBBA21169648C50068E073 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2BD7D951696762100104583 /* UIKit.framework in Frameworks */,
+				C2DBBA201696487C0068E073 /* CoreGraphics.framework in Frameworks */,
 				C2DBB9F8169648570068E073 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +79,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2DBBA07169648570068E073 /* SenTestingKit.framework in Frameworks */,
-				C2DBBA09169648570068E073 /* UIKit.framework in Frameworks */,
+				C2DBBA2A16964B610068E073 /* CoreGraphics.framework in Frameworks */,
+				C2BD7D971696762B00104583 /* UIKit.framework in Frameworks */,
 				C2DBBA0A169648570068E073 /* Foundation.framework in Frameworks */,
 				C2DBBA0D169648570068E073 /* libMTPDF.a in Frameworks */,
 			);
@@ -101,9 +111,11 @@
 		C2DBB9F6169648570068E073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2DBBA1F1696487C0068E073 /* CoreGraphics.framework */,
 				C2DBB9F7169648570068E073 /* Foundation.framework */,
 				C2DBBA06169648570068E073 /* SenTestingKit.framework */,
 				C2DBBA08169648570068E073 /* UIKit.framework */,
+				C2BD7D941696762100104583 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +151,7 @@
 		C2DBBA0F169648570068E073 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2DBBA21169648C50068E073 /* sample.pdf */,
 				C2DBBA10169648570068E073 /* MTPDFTests-Info.plist */,
 				C2DBBA11169648570068E073 /* InfoPlist.strings */,
 			);
@@ -217,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2DBBA13169648570068E073 /* InfoPlist.strings in Resources */,
+				C2DBBA22169648C50068E073 /* sample.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2DBBA16169648570068E073 /* MTPDFTests.m in Sources */,
+				C2DBBA2916964AF70068E073 /* MTPDFTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +411,7 @@
 				C2DBBA1B169648570068E073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2DBBA1C169648570068E073 /* Build configuration list for PBXNativeTarget "MTPDFTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +420,7 @@
 				C2DBBA1E169648570068E073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
