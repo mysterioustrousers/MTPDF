@@ -73,6 +73,14 @@
 }
 
 
++ (MTPDF *)PDFWithData:(NSData *)data
+{
+    CFDataRef myPDFData = (__bridge CFDataRef)data;
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData(myPDFData);
+    return [[MTPDF alloc] initWithReference:CGPDFDocumentCreateWithProvider(provider)];
+}
+
+
 - (BOOL)unlockWithPassword:(NSString *)password
 {
     return CGPDFDocumentUnlockWithPassword(_reference, [password UTF8String]);
@@ -175,9 +183,7 @@
     CFDataRef boxData = CFDataCreate(NULL, (const UInt8 *)&rect, sizeof(CGRect));
     CFDictionarySetValue(pageDict, kCGPDFContextMediaBox, boxData);
 
-    CGPDFContextBeginPage(context, pageDict);
 	CGContextDrawPDFPage(context, _reference);
-    CGPDFContextEndPage(context);
 
 	CGContextRestoreGState(context);
 

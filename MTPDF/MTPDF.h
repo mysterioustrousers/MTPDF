@@ -26,6 +26,8 @@
 + (MTPDF *)PDFWithContentsOfFile:(NSString *)path;
 + (MTPDF *)PDFWithContentsOfURL:(NSURL *)aURL;
 
++ (MTPDF *)PDFWithData:(NSData *)data;
+
 - (BOOL)unlockWithPassword:(NSString *)password;
 - (void)writeToFile:(NSString *)path;
 

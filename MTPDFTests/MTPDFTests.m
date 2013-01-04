@@ -66,6 +66,25 @@
     STAssertNotNil(pdf.subject, nil);
 }
 
+- (void)testCreateFromData
+{
+    NSData *data = [NSData dataWithContentsOfFile:_inputPDFPath];
+    MTPDF *pdf = [MTPDF PDFWithData:data];
+    STAssertNotNil(pdf, nil);
+    STAssertTrue(pdf.reference != NULL, nil);
+    STAssertNotNil(pdf.pages, nil);
+    STAssertTrue(pdf.pages.count == 1, nil);
+    STAssertTrue(pdf.allowsCopying, nil);
+    STAssertTrue(pdf.allowsPrinting, nil);
+    STAssertFalse(pdf.isEncrypted, nil);
+    STAssertTrue(pdf.isUnlocked, nil);
+    STAssertNotNil(pdf.version, nil);
+    STAssertNotNil(pdf.title, nil);
+    STAssertNotNil(pdf.author, nil);
+    STAssertNotNil(pdf.creator, nil);
+    STAssertNotNil(pdf.subject, nil);
+}
+
 - (void)testWriteToFile
 {
     MTPDF *pdf = [MTPDF PDFWithContentsOfURL:[NSURL fileURLWithPath:_inputPDFPath]];
@@ -105,8 +124,8 @@
     STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:path], nil);
 
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfFile:path]];
-    STAssertTrue(image.size.width == page.size.width * 4, nil);
-    STAssertTrue(image.size.height == page.size.height * 4, nil);
+    STAssertEqualsWithAccuracy(image.size.width, page.size.width * 4, 5, nil);
+    STAssertEqualsWithAccuracy(image.size.height, page.size.height * 4, 5, nil);
 }
 
 @end
