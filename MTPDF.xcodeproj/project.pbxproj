@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74E99295B5B242DC984405F7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC43F33E39D743199EFD60C8 /* libPods.a */; };
 		C2BD7D951696762100104583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BD7D941696762100104583 /* UIKit.framework */; };
 		C2BD7D971696762B00104583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BD7D941696762100104583 /* UIKit.framework */; };
 		C2DBB9F8169648570068E073 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DBB9F7169648570068E073 /* Foundation.framework */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D161186AE0545AC89E80941 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C2BD7D941696762100104583 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2DBB9F4169648570068E073 /* libMTPDF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMTPDF.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DBB9F7169648570068E073 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,7 @@
 		C2DBBA15169648570068E073 /* MTPDFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTPDFTests.m; sourceTree = "<group>"; };
 		C2DBBA1F1696487C0068E073 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C2DBBA21169648C50068E073 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
+		DC43F33E39D743199EFD60C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 				C2BD7D951696762100104583 /* UIKit.framework in Frameworks */,
 				C2DBBA201696487C0068E073 /* CoreGraphics.framework in Frameworks */,
 				C2DBB9F8169648570068E073 /* Foundation.framework in Frameworks */,
+				74E99295B5B242DC984405F7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 				C2DBBA0E169648570068E073 /* MTPDFTests */,
 				C2DBB9F6169648570068E073 /* Frameworks */,
 				C2DBB9F5169648570068E073 /* Products */,
+				3D161186AE0545AC89E80941 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +121,7 @@
 				C2DBBA06169648570068E073 /* SenTestingKit.framework */,
 				C2DBBA08169648570068E073 /* UIKit.framework */,
 				C2BD7D941696762100104583 /* UIKit.framework */,
+				DC43F33E39D743199EFD60C8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 				C2DBB9F0169648570068E073 /* Sources */,
 				C2DBB9F1169648570068E073 /* Frameworks */,
 				C2DBB9F2169648570068E073 /* CopyFiles */,
+				5983E5BD0835433087403A28 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,6 +244,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5983E5BD0835433087403A28 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		C2DBBA03169648570068E073 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +335,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -333,6 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -340,11 +363,11 @@
 		};
 		C2DBBA1A169648570068E073 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D161186AE0545AC89E80941 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/MTPDF.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTPDF/MTPDF-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -352,11 +375,11 @@
 		};
 		C2DBBA1B169648570068E073 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D161186AE0545AC89E80941 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/MTPDF.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTPDF/MTPDF-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

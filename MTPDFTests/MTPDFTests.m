@@ -46,6 +46,8 @@
     STAssertNotNil(pdf.author, nil);
     STAssertNotNil(pdf.creator, nil);
     STAssertNotNil(pdf.subject, nil);
+    STAssertNotNil(pdf.creationDate, nil);
+    STAssertNotNil(pdf.modifiedDate, nil);
 }
 
 - (void)testCreateFromURL
@@ -64,6 +66,8 @@
     STAssertNotNil(pdf.author, nil);
     STAssertNotNil(pdf.creator, nil);
     STAssertNotNil(pdf.subject, nil);
+    STAssertNotNil(pdf.creationDate, nil);
+    STAssertNotNil(pdf.modifiedDate, nil);
 }
 
 - (void)testCreateFromData
@@ -83,6 +87,8 @@
     STAssertNotNil(pdf.author, nil);
     STAssertNotNil(pdf.creator, nil);
     STAssertNotNil(pdf.subject, nil);
+    STAssertNotNil(pdf.creationDate, nil);
+    STAssertNotNil(pdf.modifiedDate, nil);
 }
 
 - (void)testWriteToFile
@@ -110,6 +116,8 @@
     STAssertNotNil(pdf.author, nil);
     STAssertNotNil(pdf.creator, nil);
     STAssertNotNil(pdf.subject, nil);
+    STAssertNotNil(pdf.creationDate, nil);
+    STAssertNotNil(pdf.modifiedDate, nil);
 }
 
 - (void)testWriteToFileWithBlankAttributes
@@ -137,6 +145,8 @@
     STAssertNil(pdf.author, nil);
     STAssertNil(pdf.creator, nil);
     STAssertNil(pdf.subject, nil);
+    STAssertNotNil(pdf.creationDate, nil);
+    STAssertNotNil(pdf.modifiedDate, nil);
 }
 
 - (void)testToImage

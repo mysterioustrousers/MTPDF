@@ -21,6 +21,8 @@
 @property (strong, nonatomic)   NSString            *author;
 @property (strong, nonatomic)   NSString            *creator;
 @property (strong, nonatomic)   NSString            *subject;
+@property (readonly)            NSDate              *creationDate;
+@property (readonly)            NSDate              *modifiedDate;
 
 
 + (MTPDF *)PDFWithContentsOfFile:(NSString *)path;

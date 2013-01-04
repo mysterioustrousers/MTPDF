@@ -7,6 +7,9 @@
 //
 
 #import "MTPDF.h"
+#import <NSDate+MTDates.h>
+
+
 
 
 @interface MTPDFPage ()
@@ -51,10 +54,19 @@
         // get dictionary info
         CGPDFDictionaryRef dict = CGPDFDocumentGetInfo(_reference);
         if (dict != NULL) {
-            _title      = [self getKey:"Title"  from:dict];
-            _author     = [self getKey:"Author" from:dict];
-            _creator    = [self getKey:"Creator" from:dict];
-            _subject    = [self getKey:"Subject" from:dict];
+            _title          = [self getKey:"Title"          from:dict];
+            _author         = [self getKey:"Author"         from:dict];
+            _creator        = [self getKey:"Creator"        from:dict];
+            _subject        = [self getKey:"Subject"        from:dict];
+
+            NSString *creationDateString = [self getKey:"CreationDate" from:dict];
+            if (creationDateString)
+                _creationDate = [self dateFromPDFDateString:creationDateString];
+
+
+            NSString *modifiedDateString = [self getKey:"ModDate" from:dict];
+            if (modifiedDateString)
+                _modifiedDate = [self dateFromPDFDateString:modifiedDateString];
         }
     }
     return self;
@@ -117,6 +129,44 @@
     if (CGPDFDictionaryGetString(dict, key, &cfValue))
         value = CFBridgingRelease(CGPDFStringCopyTextString(cfValue));
     return value;
+}
+
+// D:20111103113132+11'00'
+// D: 2011 11 03 11 31 32 +11 '00'
+- (NSDate *)dateFromPDFDateString:(NSString *)string
+{
+    NSRange yearRange   = NSMakeRange(2, 4);
+    NSRange monthRange  = NSMakeRange(yearRange.location    + yearRange.length,     2);
+    NSRange dayRange    = NSMakeRange(monthRange.location   + monthRange.length,    2);
+    NSRange hourRange   = NSMakeRange(dayRange.location     + dayRange.length,      2);
+    NSRange minRange    = NSMakeRange(hourRange.location    + hourRange.length,     2);
+    NSRange secRange    = NSMakeRange(minRange.location     + minRange.length,      2);
+    NSRange signRange   = NSMakeRange(secRange.location     + secRange.length,      1);
+    NSRange tzRange     = NSMakeRange(signRange.location    + signRange.length,     2);
+
+    NSInteger year      = [[string substringWithRange:yearRange]    integerValue];
+    NSInteger month     = [[string substringWithRange:monthRange]   integerValue];
+    NSInteger day       = [[string substringWithRange:dayRange]     integerValue];
+    NSInteger hour      = [[string substringWithRange:hourRange]    integerValue];
+    NSInteger min       = [[string substringWithRange:minRange]     integerValue];
+    NSInteger sec       = [[string substringWithRange:secRange]     integerValue];
+
+    NSInteger sign      = 1;
+    if (string.length >= signRange.location + signRange.location) {
+        sign = [[string substringWithRange:signRange] isEqualToString:@"-"] ? -1 : 1;
+
+    }
+
+    NSInteger tz        = 0;
+    if (string.length >= tzRange.location + tzRange.location) {
+        tz = [[string substringWithRange:tzRange] integerValue] * sign;
+    }
+
+    NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT:(tz * 60 * 60)];
+    [NSDate setTimeZone:timeZone];
+    NSDate *date = [NSDate dateFromYear:year month:month day:day hour:hour minute:min second:sec];
+    [NSDate setTimeZone:[NSTimeZone defaultTimeZone]];
+    return date;
 }
 
 
