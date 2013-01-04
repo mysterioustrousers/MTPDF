@@ -89,10 +89,10 @@
 - (void)writeToFile:(NSString *)path
 {
     CFMutableDictionaryRef infoDict = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-    CFDictionarySetValue(infoDict, kCGPDFContextTitle,      CFBridgingRetain(_title));
-    CFDictionarySetValue(infoDict, kCGPDFContextAuthor,     CFBridgingRetain(_author));
-    CFDictionarySetValue(infoDict, kCGPDFContextCreator,    CFBridgingRetain(_creator));
-    CFDictionarySetValue(infoDict, kCGPDFContextSubject,    CFBridgingRetain(_subject));
+    if (_title)     CFDictionarySetValue(infoDict, kCGPDFContextTitle,      CFBridgingRetain(_title));
+    if (_author)    CFDictionarySetValue(infoDict, kCGPDFContextAuthor,     CFBridgingRetain(_author));
+    if (_creator)   CFDictionarySetValue(infoDict, kCGPDFContextCreator,    CFBridgingRetain(_creator));
+    if (_subject)   CFDictionarySetValue(infoDict, kCGPDFContextSubject,    CFBridgingRetain(_subject));
 
     MTPDFPage *anyPage = [_pages lastObject];
     CGRect rect = anyPage.frame;

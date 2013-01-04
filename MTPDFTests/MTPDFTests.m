@@ -112,6 +112,33 @@
     STAssertNotNil(pdf.subject, nil);
 }
 
+- (void)testWriteToFileWithBlankAttributes
+{
+    MTPDF *pdf = [MTPDF PDFWithContentsOfURL:[NSURL fileURLWithPath:_inputPDFPath]];
+    pdf.title   = nil;
+    pdf.author  = nil;
+    pdf.creator = nil;
+    pdf.subject = nil;
+
+    [pdf writeToFile:_outputPDFPath];
+    STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:_outputPDFPath], nil);
+
+    pdf = [MTPDF PDFWithContentsOfURL:[NSURL fileURLWithPath:_outputPDFPath]];
+    STAssertNotNil(pdf, nil);
+    STAssertTrue(pdf.reference != NULL, nil);
+    STAssertNotNil(pdf.pages, nil);
+    STAssertTrue(pdf.pages.count == 1, nil);
+    STAssertTrue(pdf.allowsCopying, nil);
+    STAssertTrue(pdf.allowsPrinting, nil);
+    STAssertFalse(pdf.isEncrypted, nil);
+    STAssertTrue(pdf.isUnlocked, nil);
+    STAssertNotNil(pdf.version, nil);
+    STAssertNil(pdf.title, nil);
+    STAssertNil(pdf.author, nil);
+    STAssertNil(pdf.creator, nil);
+    STAssertNil(pdf.subject, nil);
+}
+
 - (void)testToImage
 {
     MTPDF *pdf = [MTPDF PDFWithContentsOfURL:[NSURL fileURLWithPath:_inputPDFPath]];
