@@ -11,6 +11,7 @@
 
 
 @property (readonly)            CGPDFDocumentRef    reference;
+@property (readonly)            NSData              *data;
 @property (readonly)            NSArray             *pages;
 @property (readonly)            BOOL                allowsCopying;
 @property (readonly)            BOOL                allowsPrinting;
@@ -27,7 +28,6 @@
 
 + (MTPDF *)PDFWithContentsOfFile:(NSString *)path;
 + (MTPDF *)PDFWithContentsOfURL:(NSURL *)aURL;
-
 + (MTPDF *)PDFWithData:(NSData *)data;
 
 - (BOOL)unlockWithPassword:(NSString *)password;

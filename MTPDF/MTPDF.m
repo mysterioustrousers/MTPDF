@@ -20,6 +20,13 @@
 
 
 
+@interface MTPDF ()
+@property (readwrite)   NSData  *data;
+@end
+
+
+
+
 
 @implementation MTPDF
 
@@ -80,8 +87,8 @@
 
 + (MTPDF *)PDFWithContentsOfURL:(NSURL *)aURL
 {
-    CFURLRef URL = (CFURLRef)CFBridgingRetain(aURL);
-    return [[MTPDF alloc] initWithReference:CGPDFDocumentCreateWithURL(URL)];
+    NSData *data = [NSData dataWithContentsOfURL:aURL];
+    return [MTPDF PDFWithData:data];
 }
 
 
@@ -89,7 +96,9 @@
 {
     CFDataRef myPDFData = (__bridge CFDataRef)data;
     CGDataProviderRef provider = CGDataProviderCreateWithCFData(myPDFData);
-    return [[MTPDF alloc] initWithReference:CGPDFDocumentCreateWithProvider(provider)];
+    MTPDF *PDF = [[MTPDF alloc] initWithReference:CGPDFDocumentCreateWithProvider(provider)];
+    PDF.data = data;
+    return PDF;
 }
 
 
