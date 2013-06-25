@@ -172,9 +172,9 @@
     }
 
     NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT:(tz * 60 * 60)];
-    [NSDate setTimeZone:timeZone];
-    NSDate *date = [NSDate dateFromYear:year month:month day:day hour:hour minute:min second:sec];
-    [NSDate setTimeZone:[NSTimeZone defaultTimeZone]];
+    [NSDate mt_setTimeZone:timeZone];
+    NSDate *date = [NSDate mt_dateFromYear:year month:month day:day hour:hour minute:min second:sec];
+    [NSDate mt_setTimeZone:[NSTimeZone defaultTimeZone]];
     return date;
 }
 
