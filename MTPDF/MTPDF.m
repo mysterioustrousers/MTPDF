@@ -120,7 +120,7 @@
     CGContextRef PDFContext = CGPDFContextCreateWithURL((__bridge CFURLRef)([NSURL fileURLWithPath:path]), &rect, infoDict);
 
     for (MTPDFPage *page in _pages) {
-        [page drawInContext:PDFContext];
+        [page drawInPDFContext:PDFContext];
     }
 
     CFRelease(PDFContext);
@@ -206,7 +206,7 @@
     return _frame.size;
 }
 
-- (void)drawInContext:(CGContextRef)context
+- (void)drawInPDFContext:(CGContextRef)context
 {
     CFMutableDictionaryRef pageDict = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
     CFDataRef boxData = CFDataCreate(NULL, (const UInt8 *)&_frame, sizeof(CGRect));
@@ -218,6 +218,22 @@
 
     CFRelease(pageDict);
     CFRelease(boxData);
+}
+
+- (void)drawInContext:(CGContextRef)context atSize:(CGSize)drawSize
+{
+	// Flip coordinates
+	CGContextGetCTM(context);
+	CGContextScaleCTM(context, 1, -1);
+	CGContextTranslateCTM(context, 0, -drawSize.height);
+ 
+	// get the rectangle of the cropped inside
+	CGRect mediaRect = CGPDFPageGetBoxRect(_reference, kCGPDFCropBox);
+	CGContextScaleCTM(context, drawSize.width / mediaRect.size.width,
+					  drawSize.height / mediaRect.size.height);
+	CGContextTranslateCTM(context, -mediaRect.origin.x, -mediaRect.origin.y);
+	
+	CGContextDrawPDFPage(context, _reference);
 }
 
 - (UIImage *)imageWithPixelsPerPoint:(NSInteger)ppp
