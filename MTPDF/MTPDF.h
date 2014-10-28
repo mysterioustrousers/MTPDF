@@ -45,7 +45,8 @@
 @property (readonly) NSInteger      pageNumber;
 @property (readonly) CGSize         size;
 
-- (void)drawInContext:(CGContextRef)context;
+- (void)drawInPDFContext:(CGContextRef)context;
+- (void)drawInContext:(CGContextRef)context atSize:(CGSize)drawSize;
 - (UIImage *)imageWithPixelsPerPoint:(NSInteger)ppp;
 
 @end
