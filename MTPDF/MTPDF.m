@@ -208,6 +208,8 @@
 
 - (void)drawInPDFContext:(CGContextRef)context
 {
+	CGPDFPageRetain(_reference);
+	
     CFMutableDictionaryRef pageDict = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
     CFDataRef boxData = CFDataCreate(NULL, (const UInt8 *)&_frame, sizeof(CGRect));
     CFDictionarySetValue(pageDict, kCGPDFContextMediaBox, boxData);
@@ -218,10 +220,14 @@
 
     CFRelease(pageDict);
     CFRelease(boxData);
+	
+	CGPDFPageRelease(_reference);
 }
 
 - (void)drawInContext:(CGContextRef)context atSize:(CGSize)drawSize
 {
+	CGPDFPageRetain(_reference);
+	
 	// Flip coordinates
 	CGContextGetCTM(context);
 	CGContextScaleCTM(context, 1, -1);
@@ -234,10 +240,14 @@
 	CGContextTranslateCTM(context, -mediaRect.origin.x, -mediaRect.origin.y);
 	
 	CGContextDrawPDFPage(context, _reference);
+	
+	CGPDFPageRelease(_reference);
 }
 
 - (UIImage *)imageWithPixelsPerPoint:(NSInteger)ppp
 {
+	CGPDFPageRetain(_reference);
+	
     CGSize size = _frame.size;
     CGRect rect = CGRectMake(0, 0, size.width, size.height) ;
     size.width  *= ppp;
@@ -264,6 +274,8 @@
 
 	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
+	
+	CGPDFPageRelease(_reference);
 
 	return resultingImage;
 }
