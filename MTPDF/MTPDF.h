@@ -45,8 +45,14 @@
 @property (readonly) NSInteger      pageNumber;
 @property (readonly) CGSize         size;
 
+// This is the old method, and has gone away. Please use drawInContext:atSize: instead.
+//- (void)drawInContext:(CGContextRef)context;
+
+// New draw methods. Use drawInPDFContext: to draw in a specifically created CGPDFContext.
 - (void)drawInPDFContext:(CGContextRef)context;
+// Use drawInContext:atSize: as a replacement for the old drawInContext: method. Size will specify the dimensions at which to draw in the context.
 - (void)drawInContext:(CGContextRef)context atSize:(CGSize)drawSize;
+
 - (UIImage *)imageWithPixelsPerPoint:(NSInteger)ppp;
 
 @end
