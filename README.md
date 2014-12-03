@@ -48,10 +48,28 @@ Iterate through pages:
       page.size     // => (500, 600)
     }
 
-Draw a page in a view:
+Draw a page in a UIView drawRect (fitting the height of the view):
 
     MTPDFPage *page = pdf.pages[0];
-    [page drawInContext:UIGraphicsGetCurrentContext()];
+    
+    // Calculate the size to draw based on the height of the view's rect
+    CGSize fullSize = page.size;
+	CGFloat ratio = fullSize.width / fullSize.height;
+	CGSize aspectFittingSize = CGSizeMake(rect.height * ratio, rect.height);
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	[page drawInContext:context atSize:aspectFittingSize];
+
+Draw a page to a CGPDFContext:
+
+    MTPDFPage *page = pdf.pages[0];
+    CGRect rect = page.frame;
+    CGContextRef PDFContext = CGPDFContextCreateWithURL((__bridge CFURLRef)([NSURL fileURLWithPath:destinationFilePath]), &rect, NULL);
+
+    [page drawInPDFContext:PDFContext];
+
+    CFRelease(PDFContext);
 
 Export a page as an UIImage:
 
