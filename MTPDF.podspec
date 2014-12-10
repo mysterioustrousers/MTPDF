@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MTPDF"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Objective-C PDF objects. Doing my part to help us stay out of the headache that is Core Foundation."
   s.homepage     = "https://github.com/mysterioustrousers/MTPDF"
   s.license      = 'MIT'
