@@ -274,7 +274,8 @@
 
 	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
-	
+	CFRelease(pageDict);
+	CFRelease(boxData);
 	CGPDFPageRelease(_reference);
 
 	return resultingImage;
