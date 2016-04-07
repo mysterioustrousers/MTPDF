@@ -161,13 +161,13 @@
     NSInteger sec       = [[string substringWithRange:secRange]     integerValue];
 
     NSInteger sign      = 1;
-    if (string.length >= signRange.location + signRange.location) {
+    if (string.length >= signRange.location + signRange.length) {
         sign = [[string substringWithRange:signRange] isEqualToString:@"-"] ? -1 : 1;
 
     }
 
     NSInteger tz        = 0;
-    if (string.length >= tzRange.location + tzRange.location) {
+    if (string.length >= tzRange.location + tzRange.length) {
         tz = [[string substringWithRange:tzRange] integerValue] * sign;
     }
 
