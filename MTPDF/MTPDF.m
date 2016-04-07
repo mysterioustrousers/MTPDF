@@ -144,37 +144,29 @@
 // D: 2011 11 03 11 31 32 +11 '00'
 - (NSDate *)dateFromPDFDateString:(NSString *)string
 {
-    NSRange yearRange   = NSMakeRange(2, 4);
-    NSRange monthRange  = NSMakeRange(yearRange.location    + yearRange.length,     2);
-    NSRange dayRange    = NSMakeRange(monthRange.location   + monthRange.length,    2);
-    NSRange hourRange   = NSMakeRange(dayRange.location     + dayRange.length,      2);
-    NSRange minRange    = NSMakeRange(hourRange.location    + hourRange.length,     2);
-    NSRange secRange    = NSMakeRange(minRange.location     + minRange.length,      2);
-    NSRange signRange   = NSMakeRange(secRange.location     + secRange.length,      1);
-    NSRange tzRange     = NSMakeRange(signRange.location    + signRange.length,     2);
-
-    NSInteger year      = [[string substringWithRange:yearRange]    integerValue];
-    NSInteger month     = [[string substringWithRange:monthRange]   integerValue];
-    NSInteger day       = [[string substringWithRange:dayRange]     integerValue];
-    NSInteger hour      = [[string substringWithRange:hourRange]    integerValue];
-    NSInteger min       = [[string substringWithRange:minRange]     integerValue];
-    NSInteger sec       = [[string substringWithRange:secRange]     integerValue];
-
-    NSInteger sign      = 1;
-    if (string.length >= signRange.location + signRange.location) {
-        sign = [[string substringWithRange:signRange] isEqualToString:@"-"] ? -1 : 1;
-
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    
+    int startIndex = 2;
+    NSString * formatCheck = [string substringToIndex:2];
+    
+    if(![formatCheck isEqualToString:@"D:"])
+    {
+        NSLog(@"ERROR: Date String wasnt in expected format");
+        startIndex = 0;
+        //return nil;
     }
-
-    NSInteger tz        = 0;
-    if (string.length >= tzRange.location + tzRange.location) {
-        tz = [[string substringWithRange:tzRange] integerValue] * sign;
+    
+    NSString * extract = [string substringFromIndex: startIndex];
+    
+    if([extract length]>14)
+    {
+        [dateFormat setDateFormat:@"yyyyMMddHHmmssTZD"];
     }
-
-    NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT:(tz * 60 * 60)];
-    [NSDate mt_setTimeZone:timeZone];
-    NSDate *date = [NSDate mt_dateFromYear:year month:month day:day hour:hour minute:min second:sec];
-    [NSDate mt_setTimeZone:[NSTimeZone defaultTimeZone]];
+    else
+    {
+        [dateFormat setDateFormat:@"yyyyMMddHHmmss"];
+    }
+    NSDate * date = [dateFormat dateFromString: extract];
     return date;
 }
 
