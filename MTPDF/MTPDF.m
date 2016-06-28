@@ -96,9 +96,14 @@
 {
     CFDataRef myPDFData = (__bridge CFDataRef)data;
     CGDataProviderRef provider = CGDataProviderCreateWithCFData(myPDFData);
-    MTPDF *PDF = [[MTPDF alloc] initWithReference:CGPDFDocumentCreateWithProvider(provider)];
+    CGPDFDocumentRef document = CGPDFDocumentCreateWithProvider(provider);
+    MTPDF *PDF = [[MTPDF alloc] initWithReference:document];
     PDF.data = data;
+    CGDataProviderRelease(provider);
     return PDF;
+}
+- (void)dealloc{
+    CFRelease(_reference);
 }
 
 
@@ -197,10 +202,13 @@
         _reference  = reference;
         _pageNumber = CGPDFPageGetPageNumber(_reference);
         _frame      = CGPDFPageGetBoxRect(_reference, kCGPDFMediaBox);
+        CGPDFPageRetain(_reference);
     }
     return self;
 }
-
+- (void)dealloc{
+    CGPDFPageRelease(_reference);
+}
 - (CGSize)size
 {
     return _frame.size;
