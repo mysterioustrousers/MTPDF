@@ -3,6 +3,8 @@ MTPDF
 
 Objective-C PDF objects. Doing my part to help us stay out of the headache that is Core Foundation.
 
+A Swift [port](https://github.com/amosavian/PDFDocument-Swift/blob/master/PDFDocument.swift)
+
 ### Installation
 
 In your Podfile, add this line:
